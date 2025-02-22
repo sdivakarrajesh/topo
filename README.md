@@ -58,4 +58,4 @@ npm test
 
 ### Assumptions and Challenges
 
-Although the CSV, JSON and PDF data had some structured data, the PPTX file had unstructured. Hardcoded parsing is done.
+Although the CSV, JSON and PDF data had some structured data, the PPTX file had unstructured. Hardcoded parsing is done in that case
