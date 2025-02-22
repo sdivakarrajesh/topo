@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Membership, Location, ActivityType, ActivitySession, Company, Employee, CompanyPerformance, QuarterlyPerformanceReport
+from .models import Membership, Location, ActivityType, ActivitySession, Company, Employee, CompanyPerformance, QuarterlyPerformanceReport, AnnualSummary, RevenueBreakdown
 
 # Register your models here.
 class MembershipAdmin(admin.ModelAdmin):
@@ -37,7 +37,15 @@ class CompanyPerformanceAdmin(admin.ModelAdmin):
 
 class QuarterlyPerformanceReportAdmin(admin.ModelAdmin):
     list_filter = ('year', 'quarter')
-    list_display = ('year', 'quarter', 'revenue', 'memberships_sold', 'avg_duration')
+    list_display = ('report_type', 'year', 'quarter', 'revenue', 'memberships_sold', 'avg_duration')
+
+class AnnualSummaryAdmin(admin.ModelAdmin):
+    list_filter = ('year', 'company__name')
+    list_display = ('year', 'company', 'total_revenue', 'total_memberships_sold', 'top_location')
+
+class RevenueBreakdownAdmin(admin.ModelAdmin):
+    list_filter = ('annual_summary__company__name', 'activity_type__name')
+    list_display = ('annual_summary', 'activity_type', 'percentage')
 
 admin.site.register(Membership, MembershipAdmin)
 admin.site.register(Location, LocationAdmin)
@@ -47,4 +55,6 @@ admin.site.register(Company, CompanyAdmin)
 admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(CompanyPerformance, CompanyPerformanceAdmin)
 admin.site.register(QuarterlyPerformanceReport, QuarterlyPerformanceReportAdmin)
+admin.site.register(AnnualSummary, AnnualSummaryAdmin)
+admin.site.register(RevenueBreakdown, RevenueBreakdownAdmin)
 
