@@ -8,6 +8,7 @@ django = "==5.1.6"
 pdfplumber = "*"
 python-pptx = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
