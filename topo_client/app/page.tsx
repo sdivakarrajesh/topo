@@ -6,6 +6,7 @@ import RevenueBreakdownChart from "./components/revenue_chart";
 import QuarterlyRevenueChart from "./components/quarterly_trends";
 import MembershipsActivitiesTable from "./components/membership_activities";
 import { useEffect, useState } from "react";
+import ss1 from '../../data/ss1.png';
 
 export default function Home() {
   const [revenueData, setRevenueData] = useState([]);
@@ -56,23 +57,24 @@ export default function Home() {
   return (
     <div>
       <center>
-      <h1>Topo Analytics</h1>
+        <h1>Topo Analytics</h1>
+        <Image src={ss1} alt="Screenshot" width={500} height={300} />
       </center>
       <br /><br />
       <div className={styles.charts}>
         <div className={styles.chart}>
-          <h3>Revenue Breakdown by Activity</h3>
+          <h3 className={styles.h3}>Revenue Breakdown by Activity</h3>
           <RevenueBreakdownChart data={revenueData} />
         </div>
 
         <div className={styles.chart}>
-          <h3>Quarterly Revenue Trends</h3>
+          <h3 className={styles.h3}>Quarterly Revenue Trends</h3>
           <QuarterlyRevenueChart data={quarterlyRevenueData} />
         </div>
       </div>
       <br /> <br />
       <div>
-        <h3>Memberships & Activities Breakdown</h3>
+        <h3 className={styles.h3}>Memberships & Activities Breakdown</h3>
         <MembershipsActivitiesTable data={activityData} />
       </div>
     </div>
