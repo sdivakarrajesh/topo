@@ -22,13 +22,18 @@ class ActivitySessionAdmin(admin.ModelAdmin):
     )
 
 class CompanyAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ('name', 'industry')
+    list_display = ('name', 'industry', 'revenue', 'location')
+    list_filter = ('industry',)
 
 class EmployeeAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ('name', 'role')
+    list_filter = ('role',)
+    list_display = ('name', 'role', 'salary', 'hired_date', 'company')
 
 class CompanyPerformanceAdmin(admin.ModelAdmin):
-    pass
+    list_filter = ('quarter', 'company__name')
+    list_display = ('company', 'quarter', 'revenue', 'profit_margin')
 
 admin.site.register(Membership, MembershipAdmin)
 admin.site.register(Location, LocationAdmin)
