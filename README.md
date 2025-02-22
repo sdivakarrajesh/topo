@@ -18,6 +18,16 @@ python manage.py boostrap_data # imports all the data from the data files into D
 pipenv run server # start the Django server on port 8484
 ```
 
+You can create a superuser using the following command
+
+```bash
+python manage.py createsuperuser
+```
+
+Navigate to `localhost:8484/admin` where the django admin is running. You should see a comprehensive admin page for each of the models(tables) with options to filter and search
+
+![Screenshot](data/ss1.png)
+
 ## Setting up the Next.js Frontend
 
 ```bash
@@ -28,7 +38,7 @@ npm run dev
 
 Now navigate to `localhost:3000` to see the webapp running. You should see something like this:
 
-![Screenshot](data/ss1.png)
+![Screenshot](data/ss2.png)
 
 ## Testing
 
