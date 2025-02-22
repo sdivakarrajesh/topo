@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Membership, Location, ActivityType, ActivitySession, Company, Employee, CompanyPerformance
+from .models import Membership, Location, ActivityType, ActivitySession, Company, Employee, CompanyPerformance, QuarterlyPerformanceReport
 
 # Register your models here.
 class MembershipAdmin(admin.ModelAdmin):
@@ -35,6 +35,10 @@ class CompanyPerformanceAdmin(admin.ModelAdmin):
     list_filter = ('quarter', 'company__name')
     list_display = ('company', 'quarter', 'revenue', 'profit_margin')
 
+class QuarterlyPerformanceReportAdmin(admin.ModelAdmin):
+    list_filter = ('year', 'quarter')
+    list_display = ('year', 'quarter', 'revenue', 'memberships_sold', 'avg_duration')
+
 admin.site.register(Membership, MembershipAdmin)
 admin.site.register(Location, LocationAdmin)
 admin.site.register(ActivityType, ActivityTypeAdmin)
@@ -42,3 +46,5 @@ admin.site.register(ActivitySession, ActivitySessionAdmin)
 admin.site.register(Company, CompanyAdmin)
 admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(CompanyPerformance, CompanyPerformanceAdmin)
+admin.site.register(QuarterlyPerformanceReport, QuarterlyPerformanceReportAdmin)
+
