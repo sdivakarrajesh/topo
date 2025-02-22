@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const formatYAxis = (value) => {
+export const formatYAxis = (value) => {
     if (value >= 1000000) {
         return `${(value / 1000000).toFixed(1)}M`; // Convert to millions and round to 1 decimal place
     }
