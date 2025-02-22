@@ -16,7 +16,7 @@ const QuarterlyRevenueChart = ({ data }) => {
                 <XAxis dataKey="quarter" />
                 <YAxis tickFormatter={formatYAxis}/>
                 <Tooltip />
-                <Area type="monotone" dataKey="revenue" stroke="#B7B1F2" fill="#B7B1F2" />
+                <Area type="monotone" dataKey="revenue" stroke="#1777ff" fill="#1777ff" fillOpacity={0.8} />
             </AreaChart>
         </ResponsiveContainer>
     );

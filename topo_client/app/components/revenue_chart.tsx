@@ -13,7 +13,11 @@ const RevenueBreakdownChart = ({ data }) => {
                 <XAxis dataKey="activity_type" />
                 <YAxis tickFormatter={formatYAxis} />
                 <Tooltip />
-                <Bar dataKey="percentage" fill="#B7B1F2" />
+                <Bar 
+                dataKey="percentage"
+                    fill="#1777ff" 
+                 fillOpacity={0.9}
+                 />
             </BarChart>
         </ResponsiveContainer>
     );
