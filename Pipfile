@@ -17,3 +17,4 @@ python_version = "3.12"
 
 [scripts]
 server = "python manage.py runserver 0.0.0.0:8989"
+test = "python manage.py test analytics.tests"
