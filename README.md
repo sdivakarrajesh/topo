@@ -52,7 +52,7 @@ npm test
 
 ### Test Descriptions
 
-- **Backend Tests**: This tests if the All data API returns all the required keys
+- **Backend Tests**: This tests if both the APIs return all the required keys
 - **Frontend Tests**: Located in the `topo_client/tests` directory. These tests include snapshot tests and unit tests for the React components.
 
 
